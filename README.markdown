@@ -11,9 +11,68 @@ By adding the parameter ?cid= to each link, the visit will be recorded.
 ## Campaign Signups
 When a visitor visits your website via a link containing ?cid= and then signs up, the sign up is tied back to that visit and that campaign. You can then track the revenue obtained from each visitor against the cost of a particular campaign. 
 
-## Defaults
-By default, Touchstone assumes that you have a Users table but you can amend this (to say reference an Accounts table) by using an initializer:
+## Installation
+Add the following line to your Gemfile:
 
-	Touchstone.config do |c|
-		c.association_name = "account"
+	gem 'touchstone'
+
+Then run `bundle install`
+
+Copy the migrations across to your application by running `touchstone:install:migrations`. This will add a models for the 3 elements set out above.
+
+You will need to mount Touchstone in your application by adding the following line to your `routes.rb` file:
+
+	mount Touchstone::Engine, :at => "/touchstone/"
+	
+Finally, add the following to your `application_controller.rb` file:
+
+	before_filter :set_cookie_and_record_visit
+	
+	private
+	
+	def	set_cookie_and_record_visit
+		if params[:cid] && Campaign.find_by_id(params[:cid]) && !CampaignVisit.find_by_request_ip(request.remote_ip)
+      if !cookies['touchstone_campaign_id']
+        cookies['touchstone_campaign_id'] = "#{params[:cid]}"
+        CampaignVisit.create(:campaign_id => params[:cid], :request_ip => request.remote_ip)
+      end
+    end
 	end
+
+## Usage
+The installation steps described above will get you going with tracking visits from particular campaigns but you still have some work to do in linking this to your users. Touchstone only really provides a benefit when you track how much revenue your users bring in and then it will compare that to the cost of your campaigns. By way of examples only, you could adopt the following pattern to record a campaign signup:
+
+	class UsersController < ApplicationController
+		...
+		def create
+			@user = User.new(params[:user])
+			if @user.save
+				unless cookies['touchstone_campaign_id'].nil?
+					campaign_id = cookies['touchstone_campaign_id']
+					CampaignSignup.create(:user_id => @user.id, :campaign_id => campaign_id)
+				end
+			flash["notice"] = "Successfully signed up"
+			...
+		end
+		...
+	end
+
+Tracking a user's lifetime value will depend on your transactional logic but assuming a common pattern of a user having a subscription and that subscription containing many transactions, the following could be used:
+
+	class User < ActiveRecord::Base
+		...
+		def lifetime_value
+			total = Array.new
+	    self.subscription.transactions.each do |t|
+		    total << t.amount
+	    end
+	    total.inject{|sum,x| sum + x}
+		end
+		...
+	end
+		
+
+## Todo
+
+* Don't constrain Touchstone to an application that only has a Users table. Allow this as a configuration option
+* Improve design
