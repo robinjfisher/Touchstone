@@ -1,49 +1,49 @@
-.metrics {
+.touchstone {
 	font: 62.5% "Helvetica Neue", "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
 	font-weight: normal;
 	-webkit-text-shadow: 0px -1px 0px rgb(68,68,68);
 }
 
-.metrics .wrapper {
+.touchstone .wrapper {
 	width: 960px;
 	margin: 10px auto;
 }
 
-.metrics h1 {
+.touchstone h1 {
 	font-size: 3em;
 	margin-bottom: 1em;
 }
 
-.metrics h2 {
+.touchstone h2 {
 	font-size: 2.4em;
 	margin-bottom: 1em;
 }
 
-.metrics h3 {
+.touchstone h3 {
 	font-size: 2em;
 	margin-bottom: 1em;
 }
 
-.metrics label {
+.touchstone label {
 	float: left;
 	width: 120px;
 	margin-top: 2px;
 	font-weight: bold;
 }
 
-.metrics p {
+.touchstone p {
 	font-size: 1.4em;
 	margin-bottom: 1em;
 }
 
-.metrics table {
+.touchstone table {
 	font-size: 1.4em;
 	border: 1px solid rgb(153,178,183);
 	border-spacing: 0px 0px;
 	width: 100%;
 }
 
-.metrics thead th {
+.touchstone thead th {
 	padding: 8px 5px;
 	vertical-align: middle;
 	text-align: left;
@@ -53,19 +53,19 @@
 	background-color: rgb(213,222,217);
 }
 
-.metrics td {
+.touchstone td {
 	font-size: 1.2em;
 	padding: 5px;
 	border-bottom: 1px solid rgb(153,178,183);
 	border-right: 1px solid rgb(153,178,183);
 }
 
-.metrics #new-campaign {
+.touchstone #new-campaign {
 	float: right;
 	margin-top: 10px;
 }
 
-.metrics #flash_notice {
+.touchstone #flash_notice {
 	background-color: #65ce6f;
 	border: 1px solid #00cf13;
 	font-weight: bold;
@@ -74,7 +74,7 @@
 	margin: 0 200px 10px 200px;
 }
 
-.metrics #flash_error {
+.touchstone #flash_error {
 	background-color: #ff7272;
 	border: 1px solid #ff1515;
 	font-weight: bold;
@@ -83,31 +83,31 @@
 	margin: 0 200px 10px 200px;
 }
 
-.metrics #campaign-info {
+.touchstone #campaign-info {
 	margin: -3em 0 0 0;
 	font-size: 0.8em;
 }
 
-.metrics #campaign-info p {
+.touchstone #campaign-info p {
 	margin-top: -1em;
 }
 
-.metrics #financials {
+.touchstone #financials {
 	margin-bottom: 10px;
 }
 
-.metrics .stats h3 {
+.touchstone .stats h3 {
 	display: inline;
 }
 
-.metrics .stats span {
+.touchstone .stats span {
 	color: rgb(153,178,183);
 }
 
-.metrics .stats h3:not(:first-of-type) {
+.touchstone .stats h3:not(:first-of-type) {
 	margin-left: 15px;
 }
 
-.metrics #visits {
+.touchstone #visits {
 	margin-bottom: 20px;
 }

@@ -79,4 +79,5 @@ Tracking a user's lifetime value will depend on your transactional logic but ass
 ## Todo
 
 * Don't constrain Touchstone to an application that only has a Users table. Allow this as a configuration option
+* Automatically load routes and application controller content
 * Improve design

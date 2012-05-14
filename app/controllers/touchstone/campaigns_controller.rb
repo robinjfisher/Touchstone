@@ -1,6 +1,6 @@
 class Touchstone::CampaignsController < ApplicationController
   
-  layout 'touchstone/metrics'
+  layout 'touchstone/touchstone'
   
   def index
     @campaigns = Campaign.all
