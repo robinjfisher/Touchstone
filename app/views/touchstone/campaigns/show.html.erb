@@ -28,19 +28,13 @@
 <table class="table table-striped">
 	<thead>
 		<tr>
-			<th scope="col" width="25%">Name</th>
-			<th scope="col" width="30%">Email</th>
-			<th scope="col" width="30%">Registered</th>
-			<th scope="col" width="15%">LTV (inc. VAT)</th>
+			<%= signups_table_headers %>
 		</tr>
 	</thead>
 	<tbody>
 	<% @campaign.campaign_signups.each do |signup| %>
 		<tr>
-			<td><%= signup.user.name %></td>
-			<td><%= signup.user.email %></td>
-			<td><%= time_ago_in_words(signup.user.created_at) %> ago</td>
-			<td>$<%= sprintf("%.2f",signup.user.lifetime_value) %></td>
+			<%= signups_table_content(signup)%>
 		</tr>
 	<% end %>
 	</tbody>

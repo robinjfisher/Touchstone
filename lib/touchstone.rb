@@ -5,12 +5,16 @@ module Touchstone
   
   include Configuration
   
-  mattr_accessor :app_root
-  
   class << self
-    def configure &block
+    
+    def config &block
       yield Touchstone::Configuration
     end
+    
+    def association_name
+      Touchstone::Configuration.association_name
+    end
+    
   end
   
 end

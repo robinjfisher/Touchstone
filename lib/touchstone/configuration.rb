@@ -7,7 +7,7 @@ module Touchstone
     attr_accessor :association_name
     
     def association_name=name
-      @name = name
+      @name = name.downcase
     end
     
     def association_name
