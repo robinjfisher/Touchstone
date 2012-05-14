@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.name        = "touchstone"
   s.version     = Touchstone::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Roin Fisher"]
+  s.authors     = ["Robin Fisher"]
   s.email       = ["robinjfisher@gmail.com"]
   s.homepage    = "https://github.com/robinjfisher/Touchstone"
   s.summary     = "A Rails Engine that provides metrics for your web app"
