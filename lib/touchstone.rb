@@ -1,8 +1,10 @@
 require "touchstone/engine"
+require "touchstone/configuration"
 
 module Touchstone
   
-  autoload_modules Configuration
+  include Configuration
+  
   mattr_accessor :app_root
   
   class << self

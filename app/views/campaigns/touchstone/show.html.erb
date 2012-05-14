@@ -1,0 +1,43 @@
+<p><%= link_to "Home", metrics_campaigns_url %></p>
+
+<h1>Campaign - <%= @campaign.name %></h1>
+
+<section id="campaign-info">
+	<p><strong>Campaign ID:</strong> <%= @campaign.id %></p>
+
+	<p><strong>Campaign dates:</strong> From <%= @campaign.start_date.strftime("%d %B %Y") %> to <%= @campaign.end_date.strftime("%d %B %Y") %></p>
+</section><!-- #campaign-info -->
+
+<section id="financials" class="stats">
+	<h3><span class="financial-title">Campaign Spend:</span> $<%= sprintf("%.2f", @campaign.spend_amount) %></h3> 
+	<h3><span class="financial-title">Campaign Revenue:</span> $<%= sprintf("%.2f", @campaign.revenue) %></h3>
+	<h3><span class="financial-title">Return on investment:</span> <%= sprintf("%.2f", @campaign.roi) %>%</h3>
+</section>
+
+<section id="visits" class="stats">
+	<h3><span class="visit-title">Unique Campaign Visits:</span> <%= @campaign.visits %></h3>
+	<h3><span class="visit-title">Conversion Rate:</span> <%= sprintf("%.2f",@campaign.conversion_rate) %>%</h3>
+</section>
+
+<h2>Signups via this campaign</h2>
+
+<table>
+	<thead>
+		<tr>
+			<th scope="col" width="25%">Name</th>
+			<th scope="col" width="30%">Email</th>
+			<th scope="col" width="30%">Registered</th>
+			<th scope="col" width="15%">LTV (inc. VAT)</th>
+		</tr>
+	</thead>
+	<tbody>
+	<% @campaign.campaign_signups.each do |signup| %>
+		<tr>
+			<td><%= signup.user.name %></td>
+			<td><%= signup.user.email %></td>
+			<td><%= time_ago_in_words(signup.user.created_at) %> ago</td>
+			<td>$<%= sprintf("%.2f",signup.user.lifetime_value) %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>

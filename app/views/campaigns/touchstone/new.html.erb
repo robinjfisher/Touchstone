@@ -1,0 +1,29 @@
+<h1>New campaign</h1>
+
+<%= form_for @campaign do |f| %>
+	
+	<p>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.label :notes %>
+		<%= f.text_area :notes %>
+	</p>
+	<p>
+		<%= f.label :start_date %>
+		<%= f.date_select :start_date, :order => [:day, :month, :year] %>
+	</p>
+	<p>
+		<%= f.label :end_date %>
+		<%= f.date_select :end_date, :order => [:day, :month, :year] %>
+	</p>
+	<p>
+		<%= f.label :spend_amount %>
+		<%= f.text_field :spend_amount %>
+	</p>
+	<p>
+		<%= f.submit "Create campaign" %>
+	</p>
+	
+<% end %>

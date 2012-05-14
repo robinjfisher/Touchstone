@@ -1,4 +1,4 @@
-class CreateTouchstoneCampaignsTable < ActiveRecord::Migration
+class CreateTouchstoneCampaigns < ActiveRecord::Migration
   
   def change
     create_table :campaigns do |t|
