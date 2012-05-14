@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Touchstone Metrics</title>
+		<%= stylesheet_link_tag "touchstone/touchstone.css" %>
+	  <%= javascript_include_tag "application.js" %>
+	  <%= csrf_meta_tag %>
+	</head>
+	<body class="touchstone">
+		<div class="wrapper">
+			
+			<section id="flash">
+			  <% flash.each do |key, value| -%>
+			    <div id="flash_<%= key %>"><%= value.html_safe %></div>
+			  <% end -%>
+			</section>
+			
+			<%= yield %>
+			
+		</div><!-- .wrapper -->
+	</body>
+</html>
