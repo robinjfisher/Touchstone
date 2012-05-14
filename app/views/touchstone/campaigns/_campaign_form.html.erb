@@ -1,0 +1,42 @@
+<%= form_for @campaign, :html => {:class => "well span6"} do |f| %>
+	
+	<div class="control-group">
+		<%= f.label :name, :class => "control-label" %>
+		<div class="controls">
+			<%= f.text_field :name %>
+		</div><!-- eo .controls -->
+	</div><!-- eo .control-group -->
+	
+	<div class="control-group">
+		<%= f.label :notes, :class => "control-label" %>
+		<div class="controls">
+			<%= f.text_area :notes, :class => "span6", :rows => 5 %>
+		</div><!-- eo .controls -->
+	</div><!-- eo .control-group -->
+	
+	<div class="control-group">
+		<%= f.label :start_date, :class => "control-label" %>
+		<div class="controls">
+			<%= f.date_select :start_date, :order => [:day, :month, :year] %>
+		</div><!-- eo .controls -->
+	</div><!-- eo .control-group -->
+	
+	<div class="control-group">
+		<%= f.label :end_date, :class => "control-label" %>
+		<div class="controls">
+			<%= f.date_select :end_date, :order => [:day, :month, :year] %>
+		</div><!-- eo .controls -->
+	</div><!-- eo .control-group -->
+	
+	<div class="control-group">
+		<%= f.label :spend_amount, :class => "control-label" %>
+		<div class="controls">
+			<%= f.text_field :spend_amount %>
+		</div><!-- eo .controls -->
+	</div><!-- eo .control-group -->
+	
+	<p>
+		<%= f.submit :class => "btn btn-primary" %> or <%= link_to "cancel", campaigns_path %>
+	</p>
+	
+<% end %>

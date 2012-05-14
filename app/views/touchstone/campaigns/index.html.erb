@@ -1,8 +1,9 @@
-<p id="new-campaign"><%= link_to "New campaign", new_campaign_url %></p>
+<div class="page-header">
+	<%= link_to "<i class='icon-plus icon-white'></i>&nbsp;New campaign".html_safe, new_campaign_url, :class => "btn btn-primary" %>
+	<h1>Campaigns</h1>
+</div><!-- eo .page-header -->
 
-<h1>Campaigns</h1>
-
-<table>
+<table class="table table-striped">
 	<thead>
 		<tr>
 			<th scope="col" width="15%">Campaign ID</th>

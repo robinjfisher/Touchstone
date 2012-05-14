@@ -25,4 +25,19 @@ class Touchstone::CampaignsController < ApplicationController
     @campaign = Campaign.find(params[:id])
   end
   
+  def edit
+    @campaign = Campaign.find(params[:id])
+  end
+  
+  def update
+    @campaign = Campaign.find(params[:id])
+    if @campaign.update_attributes(params[:campaign]) && @campaign.save
+      flash[:notice] = "Campaign details updated"
+      redirect_to campaign_path(@campaign)
+    else
+      flash[:error] = "Could not update details at this time."
+      redirect_to campaign_path(@campaign)
+    end
+  end
+  
 end

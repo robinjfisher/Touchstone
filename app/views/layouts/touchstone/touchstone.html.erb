@@ -7,16 +7,32 @@
 	  <%= csrf_meta_tag %>
 	</head>
 	<body class="touchstone">
-		<div class="wrapper">
-			
-			<section id="flash">
-			  <% flash.each do |key, value| -%>
-			    <div id="flash_<%= key %>"><%= value.html_safe %></div>
-			  <% end -%>
-			</section>
-			
-			<%= yield %>
-			
-		</div><!-- .wrapper -->
+	 <header class="navbar navbar-fixed-top">
+	   <nav class="navbar-inner">
+	     <div class="container">
+	       <h1 class="brand"><%= link_to "Touchstone Metrics", root_url %></h1>
+	     </div>
+	   </nav>
+	 </header>
+	 <div id="main" role="main">
+	   <div class="container">
+	     <div class="content">
+	        <div class="row">
+	         	<div class="span12">
+							<% flash.each do |key, value| -%>
+								<div class="alert alert-<%= key %>">
+									<a class="close" data-dismiss="alert">×</a>
+									<p><%= value.html_safe %></p>
+								</div><!-- eo .alert -->
+							<% end -%>
+							
+							<%= yield %>
+						</div><!-- eo .span12 -->
+					</div><!-- eo .row -->
+				</div><!-- eo .content -->
+				<footer>
+				</footer>
+			</div> <!--! end of .container -->
+		</div> <!--! end of #main -->
 	</body>
 </html>

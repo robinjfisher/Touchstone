@@ -1,27 +1,31 @@
-<p><%= link_to "Home", campaigns_url %></p>
-
-<h1>Campaign - <%= @campaign.name %></h1>
+<div class="page-header">
+	<%= link_to "<i class='icon-pencil'></i>&nbsp;Edit".html_safe, edit_campaign_url(@campaign), :class => "btn" %>
+	<%= link_to "<i class='icon-home icon-white'></i>&nbsp;Home".html_safe, campaigns_url, :class => "btn btn-primary" %>
+	<h1>Campaign - <%= @campaign.name %>&nbsp;<small><abbr title="Append this to the end of each link used in this campaign e.g. http://yourdomain.com/?cid=1">?cid=<%= @campaign.id %></abbr></small></h1>
+</div><!-- eo .page-header -->
 
 <section id="campaign-info">
-	<p><strong>Campaign ID:</strong> <%= @campaign.id %></p>
-
-	<p><strong>Campaign dates:</strong> From <%= @campaign.start_date.strftime("%d %B %Y") %> to <%= @campaign.end_date.strftime("%d %B %Y") %></p>
+	<% if @campaign.end_date < Date.today %>
+		<p class="ended">This campaign has ended.</p>
+	<% else %>
+		<p class="running">This campaign is currently running.</p>
+	<% end %>
 </section><!-- #campaign-info -->
 
 <section id="financials" class="stats">
-	<h3><span class="financial-title">Campaign Spend:</span> $<%= sprintf("%.2f", @campaign.spend_amount) %></h3> 
-	<h3><span class="financial-title">Campaign Revenue:</span> $<%= sprintf("%.2f", @campaign.revenue) %></h3>
-	<h3><span class="financial-title">Return on investment:</span> <%= sprintf("%.2f", @campaign.roi) %>%</h3>
+	<h3>Campaign Spend: <span>$<%= sprintf("%.2f", @campaign.spend_amount) %></span></h3> 
+	<h3>Campaign Revenue: <span>$<%= sprintf("%.2f", @campaign.revenue) %></span></h3>
+	<h3>Return on investment: <span><%= sprintf("%.2f", @campaign.roi) %>%</span></h3>
 </section>
 
 <section id="visits" class="stats">
-	<h3><span class="visit-title">Unique Campaign Visits:</span> <%= @campaign.visits %></h3>
-	<h3><span class="visit-title">Conversion Rate:</span> <%= sprintf("%.2f",@campaign.conversion_rate) %>%</h3>
+	<h3>Unique Campaign Visits: <span><%= @campaign.visits %></span></h3>
+	<h3>Conversion Rate: <span><%= sprintf("%.2f",@campaign.conversion_rate) %>%</span></h3>
 </section>
 
 <h2>Signups via this campaign</h2>
 
-<table>
+<table class="table table-striped">
 	<thead>
 		<tr>
 			<th scope="col" width="25%">Name</th>

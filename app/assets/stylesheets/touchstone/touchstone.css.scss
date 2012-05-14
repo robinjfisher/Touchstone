@@ -1,8 +1,42 @@
-$iconSpritePath: image-path('glyphicons-halflings.png');
-$iconWhiteSpritePath: image-path('glyphicons-halflings-white.png');
+$iconSpritePath: asset-url('glyphicons-halflings.png',image);
+$iconWhiteSpritePath: asset-url('glyphicons-halflings-white.png',image);
 @import "bootstrap";
 body { padding-top: 60px; }
 @import "bootstrap-responsive";
+
+/* Mixins */
+
+@mixin float-right {
+	float: right;
+	margin: 0 5px;
+}
+
+/* Bootstrap Extensions */
+
+.touchstone .page-header .btn {
+	@include float-right;
+}
+
+.alert {
+	text-align: center;
+	padding-bottom: 0px;
+}
+
+/* Styles */
+
+.touchstone .navbar .brand {
+	font-weight: bold;
+}
+
+.touchstone .navbar .brand a {
+	color: rgb(0,0,0);
+	text-shadow: rgba(255,255,255,0.125) 0px 1px 0px;
+	text-decoration: none;
+}
+
+.touchstone .navbar .brand a:hover {
+	text-shadow: rgba(255,255,255,0.25) 0 0px 2px;
+}
 
 .touchstone {
 	font: 62.5% "Helvetica Neue", "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
@@ -10,108 +44,26 @@ body { padding-top: 60px; }
 	-webkit-text-shadow: 0px -1px 0px rgb(68,68,68);
 }
 
-.touchstone .wrapper {
-	width: 960px;
-	margin: 10px auto;
-}
-
-.touchstone h1 {
-	font-size: 3em;
-	margin-bottom: 1em;
-}
-
-.touchstone h2 {
-	font-size: 2.4em;
-	margin-bottom: 1em;
-}
-
-.touchstone h3 {
-	font-size: 2em;
-	margin-bottom: 1em;
-}
-
-.touchstone label {
-	float: left;
-	width: 120px;
-	margin-top: 2px;
-	font-weight: bold;
-}
-
-.touchstone p {
-	font-size: 1.4em;
-	margin-bottom: 1em;
-}
-
-.touchstone table {
-	font-size: 1.4em;
-	border: 1px solid rgb(153,178,183);
-	border-spacing: 0px 0px;
-	width: 100%;
-}
-
-.touchstone thead th {
-	padding: 8px 5px;
-	vertical-align: middle;
-	text-align: left;
-	text-transform: uppercase;
-	border-bottom: 1px solid rgb(153,178,183);
-	border-right: 1px solid rgb(153,178,183);
-	background-color: rgb(213,222,217);
-}
-
+.touchstone th,
 .touchstone td {
-	font-size: 1.2em;
-	padding: 5px;
-	border-bottom: 1px solid rgb(153,178,183);
-	border-right: 1px solid rgb(153,178,183);
+	font-size: 1.4em;
 }
 
-.touchstone #new-campaign {
-	float: right;
-	margin-top: 10px;
+.touchstone .controls select:first-child,
+.touchstone .controls select:last-child {
+	width: 60px;
 }
 
-.touchstone #flash_notice {
-	background-color: #65ce6f;
-	border: 1px solid #00cf13;
-	font-weight: bold;
-	text-align: center;
-	padding: 5px 0;
-	margin: 0 200px 10px 200px;
-}
-
-.touchstone #flash_error {
-	background-color: #ff7272;
-	border: 1px solid #ff1515;
-	font-weight: bold;
-	text-align: center;
-	padding: 5px 0;
-	margin: 0 200px 10px 200px;
-}
-
-.touchstone #campaign-info {
-	margin: -3em 0 0 0;
-	font-size: 0.8em;
-}
-
-.touchstone #campaign-info p {
-	margin-top: -1em;
+.touchstone .controls select:nth-child(2) {
+	width: 140px;
 }
 
 .touchstone #financials {
 	margin-bottom: 10px;
 }
 
-.touchstone .stats h3 {
-	display: inline;
-}
-
 .touchstone .stats span {
-	color: rgb(153,178,183);
-}
-
-.touchstone .stats h3:not(:first-of-type) {
-	margin-left: 15px;
+	color: rgb(0,115,204);
 }
 
 .touchstone #visits {
