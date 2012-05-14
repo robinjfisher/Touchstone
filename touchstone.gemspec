@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.summary     = "A Rails Engine that provides metrics for your web app"
   s.description = "Touchstone is a Rails Engine that adds the ability to track advanced metrics for your web app."
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.markdown"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 3.2"
