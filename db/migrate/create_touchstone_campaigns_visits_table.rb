@@ -5,6 +5,8 @@ class CreateTouchstoneCampaignVisitsTable < ActiveRecord::Migration
       t.integer   :campaign_id
       t.string    :request_ip
       t.timestamps
+      
+      add_index :request_ip
     end
   end
   
