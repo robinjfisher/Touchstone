@@ -1,4 +1,4 @@
-<p id="new-campaign"><%= link_to "New campaign", new_metrics_campaign_url %></p>
+<p id="new-campaign"><%= link_to "New campaign", new_campaign_url %></p>
 
 <h1>Campaigns</h1>
 
@@ -16,7 +16,7 @@
 	<% @campaigns.each do |campaign| %>
 		<tr>
 			<td><%= campaign.id %></td>
-			<td><%= link_to "#{campaign.name}", metrics_campaign_url(campaign.id) %></td>
+			<td><%= link_to "#{campaign.name}", campaign_url(campaign.id) %></td>
 			<td><%= campaign.start_date.strftime("%d %B %Y") %></td>
 			<td><%= campaign.end_date.strftime("%d %B %Y") %></td>
 			<td>$<%= sprintf("%.2f", campaign.spend_amount) %></td>

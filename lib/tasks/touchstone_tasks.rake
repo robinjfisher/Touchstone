@@ -1,4 +1,7 @@
-# desc "Explaining what the task does"
-# task :touchstone do
-#   # Task goes here
-# end
+namespace :touchstone do
+  
+  desc "Injects the necessary code into your application to run Touchstone"
+  task :install do
+    inject_into_file "#{Rails.root}/config/routes.rb", "mount Touchstone::Engine, :at => '/touchstone/'", :after => "routes.draw do"
+  end
+end

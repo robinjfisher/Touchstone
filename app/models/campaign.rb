@@ -6,6 +6,8 @@ class Campaign < ActiveRecord::Base
   has_many :campaign_signups
   has_many :campaign_visits
   
+  attr_accessible :name, :notes, :start_date, :end_date, :spend_amount
+  
   def revenue
     if self.campaign_signups.length > 0
       total = Array.new

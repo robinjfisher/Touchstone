@@ -1,6 +1,6 @@
 class Touchstone::CampaignsController < ApplicationController
   
-  layout 'metrics'
+  layout 'touchstone/metrics'
   
   def index
     @campaigns = Campaign.all
@@ -11,13 +11,13 @@ class Touchstone::CampaignsController < ApplicationController
   end
   
   def create
-    @campaign = Campaign.new(params[:metrics_campaign])
+    @campaign = Campaign.new(params[:campaign])
     if @campaign.save
       flash[:notice] = "Campaign added"
-      redirect_to metrics_campaigns_url
+      redirect_to campaigns_url
     else
       flash[:error] = "Could not add campaign"
-      redirect_to new_metrics_campaign_url
+      redirect_to new_campaign_url
     end
   end
   
