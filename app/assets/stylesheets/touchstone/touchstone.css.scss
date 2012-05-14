@@ -1,3 +1,9 @@
+$iconSpritePath: image-path('glyphicons-halflings.png');
+$iconWhiteSpritePath: image-path('glyphicons-halflings-white.png');
+@import "bootstrap";
+body { padding-top: 60px; }
+@import "bootstrap-responsive";
+
 .touchstone {
 	font: 62.5% "Helvetica Neue", "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
 	font-weight: normal;
