@@ -30,13 +30,13 @@ Finally, add the following to your `application_controller.rb` file:
 	
 	private
 	
-	def	set_cookie_and_record_visit
-		if params[:cid] && Campaign.find_by_id(params[:cid]) && !CampaignVisit.find_by_request_ip(request.remote_ip)
-      if !cookies['touchstone_campaign_id']
-        cookies['touchstone_campaign_id'] = "#{params[:cid]}"
-        CampaignVisit.create(:campaign_id => params[:cid], :request_ip => request.remote_ip)
-      end
-    end
+	def set_cookie_and_record_visit
+	 if params[:cid] && Campaign.find_by_id(params[:cid]) && !CampaignVisit.find_by_request_ip(request.remote_ip)
+    if !cookies['touchstone_campaign_id']
+		 cookies['touchstone_campaign_id'] = "#{params[:cid]}"
+		 CampaignVisit.create(:campaign_id => params[:cid], :request_ip => request.remote_ip)
+		end
+	 end
 	end
 
 ## Usage
