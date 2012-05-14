@@ -5,12 +5,13 @@ require "touchstone/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "touchstone"
+  s.name        = "Touchstone"
   s.version     = Touchstone::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Touchstone."
+  s.platfor     = Gem::Platform::RUBY
+  s.authors     = ["Roin Fisher"]
+  s.email       = ["robinjfisher@gmail.com"]
+  s.homepage    = "https://github.com/robinjfisher/Touchstone"
+  s.summary     = "A Rails Engine that provides metrics for your web app"
   s.description = "TODO: Description of Touchstone."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
