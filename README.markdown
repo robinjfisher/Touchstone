@@ -1,5 +1,7 @@
 Touchstone is a Rails Engine that adds the ability to track advanced metrics for your web app. It is inspired by [this post on the Think Vitamin blog](http://thinkvitamin.com/business/marketing/how-to-get-more-customers/). I would recommend reading that article to understand what Touchstone does.
 
+**Please consider this an alpha release. Versions will be released fairly quickly. Hopefully nothing will break but I'm trying to get this running in production on one of my apps so correcting errors as I go.**
+
 Touchstone consists of 3 classes:
 
 ## Campaigns
