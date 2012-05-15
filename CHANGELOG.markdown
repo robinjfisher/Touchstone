@@ -1,3 +1,7 @@
+## version 0.5.2
+
+* Call application.css in the layout not touchstone.css
+
 ## version 0.5.1
 
 * Remove jquery from application.js
