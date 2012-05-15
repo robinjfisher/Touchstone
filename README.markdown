@@ -1,6 +1,6 @@
-Touchstone is a Rails Engine that adds the ability to track advanced metrics for your web app. It is inspired by [this post on the Think Vitamin blog](http://thinkvitamin.com/business/marketing/how-to-get-more-customers/).
+Touchstone is a Rails Engine that adds the ability to track advanced metrics for your web app. It is inspired by [this post on the Think Vitamin blog](http://thinkvitamin.com/business/marketing/how-to-get-more-customers/). I would recommend reading that article to understand what Touchstone does.
 
-Touchstone consists of 3 elements:
+Touchstone consists of 3 classes:
 
 ## Campaigns
 A campaign records the details of a source from which visitors will sign up to your website. It can be a Google Adwords campaign or a link on your homepage.
@@ -9,7 +9,12 @@ A campaign records the details of a source from which visitors will sign up to y
 By adding the parameter ?cid= to each link, the visit will be recorded.
 
 ## Campaign Signups
-When a visitor visits your website via a link containing ?cid= and then signs up, the sign up is tied back to that visit and that campaign. You can then track the revenue obtained from each visitor against the cost of a particular campaign. 
+When a visitor visits your website via a link containing ?cid= and then signs up, the sign up is tied back to that visit and that campaign. You can then track the revenue obtained from each visitor against the cost of a particular campaign.
+
+## Prerequisites & Dependencies
+Touchstone requires your application to have something like a User model. The model doesn't need to be called User (you can configure this) but the purpose of Touchstone is to track users who signup to your application in response to a campaign.
+
+The views are built using Bootstrap so installing Touchstone will introduce dependencies on the sass and sass-bootstrap gems.
 
 ## Installation
 Add the following line to your Gemfile:
@@ -28,7 +33,7 @@ This will:
 * Mounts the engine in your routes.rb file
 
 ## Installation continued
-Copy the migrations across to your application by running `touchstone:install:migrations`. This will add models for the 3 elements set out above.
+Copy the migrations across to your application by running `touchstone:install:migrations`. This will add migrations to create the tables for the 3 classes set out above.
 
 If, for any reason the command `rails g touchstone` has not made the correct changes to your files, these are the changes that need to be made and can be made manually.
 
@@ -74,7 +79,7 @@ The installation steps described above will get you going with tracking visits f
 		end
 	end
 
-Tracking a user's lifetime value will depend on your transactional logic but assuming a common pattern of a user having a subscription and that subscription containing many transactions, the following could be used:
+Touchstone requires your user model to have a method called lifetime\_value in order to calculate the revenue that a user has generated. Tracking a user's lifetime value will depend on your transactional logic but assuming a common pattern of a user having a subscription and that subscription containing many transactions, the following could be used:
 
 	class User < ActiveRecord::Base
 		...
@@ -90,8 +95,5 @@ Tracking a user's lifetime value will depend on your transactional logic but ass
 
 ## Todo
 
-* Don't constrain Touchstone to an application that only has a Users table. Allow this as a configuration option
-* Automatically load routes and application controller content
-* Improve design
 * Add some tests
 * Allow customisation of currency (only displays dollars at moment although amounts are not stored in a particular currency)
