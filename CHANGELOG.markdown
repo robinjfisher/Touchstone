@@ -1,3 +1,7 @@
+## version 0.4.0
+
+* Add configuration option to set currency in views and update views to use that currency rather than hard code $
+
 ## version 0.3.1
 
 * Update changelog

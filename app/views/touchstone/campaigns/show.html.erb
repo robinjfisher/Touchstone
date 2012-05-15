@@ -13,8 +13,8 @@
 </section><!-- #campaign-info -->
 
 <section id="financials" class="stats">
-	<h3>Campaign Spend: <span>$<%= sprintf("%.2f", @campaign.spend_amount) %></span></h3> 
-	<h3>Campaign Revenue: <span>$<%= sprintf("%.2f", @campaign.revenue) %></span></h3>
+	<h3>Campaign Spend: <span><%= Touchstone.currency %><%= sprintf("%.2f", @campaign.spend_amount) %></span></h3> 
+	<h3>Campaign Revenue: <span><%= Touchstone.currency %><%= sprintf("%.2f", @campaign.revenue) %></span></h3>
 	<h3>Return on investment: <span><%= sprintf("%.2f", @campaign.roi) %>%</span></h3>
 </section>
 

@@ -4,7 +4,7 @@ module Touchstone
    
     extend self
     
-    attr_accessor :association_name, :column_names
+    attr_accessor :association_name, :column_names, :currency
     
     def association_name=name
       @name = name.downcase
@@ -20,6 +20,14 @@ module Touchstone
     
     def column_names
       @columns || [:id,:created_at]
+    end
+    
+    def currency=currency
+      @currency = currency
+    end
+    
+    def currency
+      @currency || "$"
     end
     
   end

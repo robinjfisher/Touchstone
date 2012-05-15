@@ -19,6 +19,10 @@ module Touchstone
       Touchstone::Configuration.column_names
     end
     
+    def currency
+      Touchstone::Configuration.currency
+    end
+    
   end
   
 end

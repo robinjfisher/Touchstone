@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 Touchstone.config do |c|
   
   # By default, Touchstone assumes that you have a User model
@@ -15,5 +17,10 @@ Touchstone.config do |c|
   # only show the id and created_at fields.
   
   c.column_names = [:id,:created_at]
+  
+  # This sets the currency symbol that you would like
+  # displayed. By default it is $
+  
+  c.currency = "$"
   
 end

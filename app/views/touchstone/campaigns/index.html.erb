@@ -20,7 +20,7 @@
 			<td><%= link_to "#{campaign.name}", campaign_url(campaign.id) %></td>
 			<td><%= campaign.start_date.strftime("%d %B %Y") %></td>
 			<td><%= campaign.end_date.strftime("%d %B %Y") %></td>
-			<td>$<%= sprintf("%.2f", campaign.spend_amount) %></td>
+			<td><%= Touchstone.currency %><%= sprintf("%.2f", campaign.spend_amount) %></td>
 		</tr>
 	<% end %>
 	</tbody>
