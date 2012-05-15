@@ -23,4 +23,11 @@ Touchstone.config do |c|
   
   c.currency = "$"
   
+  # If set to true, http_basic authentication will be in place
+  # before you can access Touchstone. You should create a YAML
+  # file in Rails.root/config called touchstone.yml containing
+  # a name and password
+  
+  c.authenticate = true
+  
 end

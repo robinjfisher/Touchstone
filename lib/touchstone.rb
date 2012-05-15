@@ -23,6 +23,10 @@ module Touchstone
       Touchstone::Configuration.currency
     end
     
+    def authenticate
+      Touchstone::Configuration.authenticate
+    end
+    
   end
   
 end

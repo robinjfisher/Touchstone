@@ -30,5 +30,13 @@ module Touchstone
       @currency || "$"
     end
     
+    def authenticate=authenticate
+      @authenticate = authenticate
+    end
+    
+    def authenticate
+      @authenticate
+    end
+    
   end
 end
