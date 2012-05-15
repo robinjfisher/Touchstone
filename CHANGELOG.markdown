@@ -1,3 +1,7 @@
+## version 0.4.1
+
+* Don't inject the before\_filter code into application controller as it causes an error when multiple methods are defined
+
 ## version 0.4.0
 
 * Add configuration option to set currency in views and update views to use that currency rather than hard code $

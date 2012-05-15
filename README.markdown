@@ -29,7 +29,7 @@ Once the gem has been installed run `rails g touchstone`
 This will:
 
 * Copy an initializer file to `config/initializers/touchstone.rb`. You should read this file and set your configuration options before proceeding
-* Add a before filter to your application controller. *NB*: This defaults to setting a private method for the filter. If you already have `private` defined in your application controller, you will need to remove the duplicate declaration.
+* ~~Add a before filter to your application controller. *NB*: This defaults to setting a private method for the filter. If you already have `private` defined in your application controller, you will need to remove the duplicate declaration.~~ **Not currently working. You will need to update application\_controller.rb manually. See below.**
 * Mounts the engine in your routes.rb file
 
 ## Installation continued
