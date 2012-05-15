@@ -4,7 +4,7 @@ module Touchstone
     def signups_table_headers(columns)
       item = ""
       columns.each do |column|
-        item += "<th scope='col' id='#{column}'>#{column.capitalize}</th>\n"
+        item += "<th scope='col' id='#{column}'>#{column.humanize}</th>\n"
       end
 			item.html_safe
     end
