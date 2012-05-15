@@ -23,6 +23,7 @@ class Touchstone::CampaignsController < ApplicationController
   
   def show
     @campaign = Campaign.find(params[:id])
+    @columns = Touchstone.column_names
   end
   
   def edit

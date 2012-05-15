@@ -15,6 +15,10 @@ module Touchstone
       Touchstone::Configuration.association_name
     end
     
+    def column_names
+      Touchstone::Configuration.column_names
+    end
+    
   end
   
 end

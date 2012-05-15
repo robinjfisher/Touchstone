@@ -12,7 +12,7 @@ class Campaign < ActiveRecord::Base
     if self.campaign_signups.length > 0
       total = Array.new
       self.campaign_signups.each do |signup|
-        total << signup.user.lifetime_value # TODO: Fix this
+        total << signup.user.lifetime_value
       end
       total.inject{|sum,x| sum + x}
     else

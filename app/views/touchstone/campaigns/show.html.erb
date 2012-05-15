@@ -28,13 +28,13 @@
 <table class="table table-striped">
 	<thead>
 		<tr>
-			<%= signups_table_headers %>
+			<%= signups_table_headers(@columns) %>
 		</tr>
 	</thead>
 	<tbody>
 	<% @campaign.campaign_signups.each do |signup| %>
 		<tr>
-			<%= signups_table_content(signup)%>
+			<%= signups_table_content(@columns,signup)%>
 		</tr>
 	<% end %>
 	</tbody>

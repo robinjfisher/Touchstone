@@ -18,13 +18,25 @@ Add the following line to your Gemfile:
 
 Then run `bundle install`
 
+## Configuration
+Once the gem has been installed run `rails g touchstone`
+
+This will:
+
+* Copy an initializer file to `config/initializers/touchstone.rb`. You should read this file and set your configuration options before proceeding
+* Add a before filter to your application controller. *NB*: This defaults to setting a private method for the filter. If you already have `private` defined in your application controller, you will need to remove the duplicate declaration.
+* Mounts the engine in your routes.rb file
+
+## Installation continued
 Copy the migrations across to your application by running `touchstone:install:migrations`. This will add models for the 3 elements set out above.
+
+If, for any reason the command `rails g touchstone` has not made the correct changes to your files, these are the changes that need to be made and can be made manually.
 
 You will need to mount Touchstone in your application by adding the following line to your `routes.rb` file:
 
 	mount Touchstone::Engine, :at => "/touchstone/"
 	
-Finally, add the following to your `application_controller.rb` file:
+Add the following to your `application_controller.rb` file:
 
 	before_filter :set_cookie_and_record_visit
 	

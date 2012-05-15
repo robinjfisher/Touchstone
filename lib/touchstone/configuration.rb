@@ -4,7 +4,7 @@ module Touchstone
    
     extend self
     
-    attr_accessor :association_name
+    attr_accessor :association_name, :column_names
     
     def association_name=name
       @name = name.downcase
@@ -12,6 +12,14 @@ module Touchstone
     
     def association_name
       @name || "user"
+    end
+    
+    def column_names=columns
+      @columns = columns.map(&:to_s)
+    end
+    
+    def column_names
+      @columns || [:id,:created_at]
     end
     
   end
