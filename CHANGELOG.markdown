@@ -1,3 +1,13 @@
+## version 0.3.1
+
+* Update changelog
+
+## version 0.3.0
+
+* Add initializer that mounts engine in routes.rb, copies Touchstone initializer to application and updates application controller
+* Allow configuration of model name that signups are associated to
+* Allow configuration of attributes displayed when showing signups for a campaign
+
 ## version 0.2.0
 
 * Made sass-rails and sass-bootstrap dependencies
