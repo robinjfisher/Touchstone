@@ -1,3 +1,7 @@
+## version 0.5.0
+
+* Default configuration to restrict access to Touchstone through http\_basic authentication and set as option
+
 ## version 0.4.1
 
 * Don't inject the before\_filter code into application controller as it causes an error when multiple methods are defined

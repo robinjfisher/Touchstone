@@ -32,6 +32,9 @@ This will:
 * ~~Add a before filter to your application controller. *NB*: This defaults to setting a private method for the filter. If you already have `private` defined in your application controller, you will need to remove the duplicate declaration.~~ **Not currently working. You will need to update application\_controller.rb manually. See below.**
 * Mounts the engine in your routes.rb file
 
+## Authentication
+By default, Touchstone will require http\_basic authentication to access. The credentials for access will be read from a YAML file called touchstone.yml in your config folder. You will need to create this file unless you choose not to restrict access to Touchstone (not recommended).
+
 ## Installation continued
 Copy the migrations across to your application by running `rake touchstone:install:migrations`. This will add migrations to create the tables for the 3 classes set out above.
 
