@@ -1,3 +1,7 @@
+## version 0.5.3
+
+* Namespace application.css in layout
+
 ## version 0.5.2
 
 * Call application.css in the layout not touchstone.css

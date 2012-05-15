@@ -103,4 +103,4 @@ Touchstone requires your user model to have a method called lifetime\_value in o
 ## Todo
 
 * Add some tests
-* Allow customisation of currency (only displays dollars at moment although amounts are not stored in a particular currency)
+* Copy css and js to application
