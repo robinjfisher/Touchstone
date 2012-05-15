@@ -1,3 +1,7 @@
+## version 0.5.1
+
+* Remove jquery from application.js
+
 ## version 0.5.0
 
 * Default configuration to restrict access to Touchstone through http\_basic authentication and set as option
