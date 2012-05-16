@@ -1,1 +1,25 @@
-<div class="page-header"><h1>Dashboard</h1></div>
+<div class="page-header">
+	<h1>Dashboard</h1>
+	<p>3 months to <%= form_tag '/touchstone/dashboard' do %><%= select_month(@month) %><%= select_year(@year) %><%= submit_tag "Go" %><% end %></p>
+</div>
+<p>Figures represent the position at the end of a given month.</p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Metric</th>
+			<% @range.each do |n| %>
+				<th><%= Date::MONTHNAMES[n] %></th>
+			<% end %>
+		</tr>
+	</thead>
+	<tbody>
+		<% @hash.each do |key,values| %>
+		<tr>
+			<td><%= key.humanize %></td>
+			<% values.each do |v| %>
+				<td><%= v %></td>
+			<% end %>
+		<% end %>
+		</tr>
+	</tbody>
+</table>
