@@ -1,6 +1,6 @@
 Touchstone::Engine.routes.draw do
   
-  root :to => 'campaigns#index'
+  root :to => 'dashboard#dashboard'
   resources :campaigns
   
 end
