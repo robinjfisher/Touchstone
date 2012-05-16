@@ -27,6 +27,14 @@ module Touchstone
       Touchstone::Configuration.authenticate
     end
     
+    def costs
+      costs = Touchstone::Configuration.costs
+      costs.delete(:total_cost)
+      total_cost = costs.values.inject{|sum,x| sum + x}
+      costs.merge!(:total_cost => total_cost)
+      costs
+    end
+    
   end
   
 end

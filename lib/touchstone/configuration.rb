@@ -38,5 +38,13 @@ module Touchstone
       @authenticate
     end
     
+    def costs=costs
+      @costs = costs
+    end
+    
+    def costs
+      @costs
+    end
+    
   end
 end

@@ -30,4 +30,11 @@ Touchstone.config do |c|
   
   c.authenticate = true
   
+  # This is a hash representing the monthly fixed costs for
+  # your app. By it's very nature as a fixed hash, the costs 
+  # will be approximate. I would suggest updating it periodically
+  # based on average costs.
+  
+  c.costs = {}
+  
 end

@@ -13,13 +13,32 @@
 		</tr>
 	</thead>
 	<tbody>
-		<% @hash.each do |key,values| %>
+		<% @top_line.each do |key,values| %>
 		<tr>
-			<td><%= key.humanize %></td>
+			<td><strong><%= key.humanize.upcase %></strong></td>
 			<% values.each do |v| %>
 				<td><%= v %></td>
 			<% end %>
-		<% end %>
 		</tr>
+		<% end %>
+		
+		<% @costs.each do |key,value| %>
+		<tr>
+			<td><strong><%= key.to_s.humanize.upcase %></strong></td>
+			<% @range.to_a.length.times do %>
+				<td><%= Touchstone.currency %><%= value %></td>
+			<% end %>
+		</tr>
+		<% end %>
+		
+		<% @bottom_line.each do |key,values| %>
+		<tr>
+			<td><strong><%= key.humanize.upcase %></strong></td>
+			<% values.each do |v| %>
+				<td><%= v %></td>
+			<% end %>
+		</tr>
+		<% end %>
+		
 	</tbody>
 </table>
