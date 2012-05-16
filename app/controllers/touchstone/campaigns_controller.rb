@@ -4,7 +4,7 @@ module Touchstone
     layout 'touchstone/touchstone'
   
     def index
-      @campaigns = Campaign.all
+      @campaigns = Campaign.includes(:campaign_signups).all
     end
   
     def new

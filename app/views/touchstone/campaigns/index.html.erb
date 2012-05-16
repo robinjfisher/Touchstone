@@ -7,10 +7,11 @@
 	<thead>
 		<tr>
 			<th scope="col" width="15%">Campaign ID</th>
-			<th scope="col" width="36%">Name</th>
+			<th scope="col" width="30%">Name</th>
 			<th scope="col" width="17%">Start date</th>
 			<th scope="col" width="17%">End date</th>
 			<th scope="col" width="15%">Spend amount</th>
+			<th scope="col" width="6%">Visits</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -21,6 +22,7 @@
 			<td><%= campaign.start_date.strftime("%d %B %Y") %></td>
 			<td><%= campaign.end_date.strftime("%d %B %Y") %></td>
 			<td><%= Touchstone.currency %><%= sprintf("%.2f", campaign.spend_amount) %></td>
+			<td><%= campaign.campaign_signups.count %></td>
 		</tr>
 	<% end %>
 	</tbody>
