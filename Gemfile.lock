@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    touchstone (0.5.3)
+    touchstone (0.5.4)
       bootstrap-sass (~> 2.0)
       rails (~> 3.2)
       sass-rails (~> 3.1)

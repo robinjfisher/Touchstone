@@ -1,3 +1,7 @@
+## version 0.5.4
+
+* Show number of visits a campaign has received on the index page
+
 ## version 0.5.3
 
 * Namespace application.css in layout
